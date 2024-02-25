@@ -435,25 +435,26 @@
           let limit = 100;
           let time = '';
 
-    
+
           $.each(res, function (key, value) {
             // console.log('key', key);
             // console.log('value', value);
 
             // 在這裡處理每一筆資料
-
+            // <p class="description">負責人:${value.director}</p>
             let content = `
-                      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                      <div class="col-md-6 col-lg-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon-box icon-box-cyan" style="width:100%">
                           <div class="icon"><i class="bx bx-file"></i></div>
                           <h4 class="title"><a href="">${value.hosp_name}</a></h4>
                           <p class="description">${value.type}</p>
                           <a class="description"href="#">${value.tel}</a>
-                          <p class="description">新北市${value.district}</p>
-                          <p class="description">${value.hosp_addr}</p>
-                          <p class="description">負責人:${value.director}</p>
-                          
-                          
+                          <p class="description">新北市${value.district}${value.hosp_addr}</p>
+                          <p class="description"></p>
+                          <p class="description">${value.service}</p>                    
+                          <p class="description">${value.time}</p>
+                          <p class="description">諮商心理師人數:${value.counseling_psychologist}</p>
+                          <p class="description">臨床心理師人數:${value.clinical_psychologist}</p>                        
                         </div>
                       </div>
                      `;
